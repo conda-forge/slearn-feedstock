@@ -7,24 +7,24 @@ package:
 
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 89949289e4e3f2d9ae7862c2eae507b01551fae0f7043c97656f8b0ed736e79e
 
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python >=3.6
+  host:
+    - python {{ python_min }}
     - pip
     - numpy
 
 
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - scikit-learn
     - pandas
     - numpy
@@ -33,6 +33,8 @@ requirements:
     
     
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - slearn
 
