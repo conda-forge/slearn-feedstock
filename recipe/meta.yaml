@@ -1,5 +1,5 @@
 {% set name = "slearn" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 89949289e4e3f2d9ae7862c2eae507b01551fae0f7043c97656f8b0ed736e79e
+  sha256: 0ab3a1cc3651a1dbc942c6e88ca7e3093bbf70e762ed7c60b43925678f3a2add
 
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -30,8 +30,8 @@ requirements:
     - numpy
     - scipy
     - lightgbm
-    
-    
+
+
 test:
   requires:
     - python {{ python_min }}
