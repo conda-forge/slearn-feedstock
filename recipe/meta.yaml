@@ -1,5 +1,5 @@
 {% set name = "slearn" %}
-{% set version = "0.2.9" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0ab3a1cc3651a1dbc942c6e88ca7e3093bbf70e762ed7c60b43925678f3a2add
+  sha256: 6cd20d8a4a96ac868929f9a2ea92ae1ad3f57b1f3dc11af2c423996bfe43ea46
 
 
 build:
